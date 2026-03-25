@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schemas.shopware.com/plugin/config/1.0/plugin-config.xsd">
+    <card>
+        <title>Ruhrcoder – Minimalistische Produktliste</title>
+        <title lang="en-GB">Ruhrcoder – Minimalistic Product List</title>
+    </card>
+</config>

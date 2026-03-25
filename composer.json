@@ -1,0 +1,44 @@
+{
+    "name": "ruhrcoder/rc-minimalistic-product-list",
+    "description": "Shows a minimalistic product list",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Ruhrcoder (René Schustek)",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Ruhrcoder\\RcMinimalisticProductList\\RcMinimalisticProductList",
+        "label": {
+            "de-DE": "Ruhrcoder - Eine minimalistische Produktliste anzeigen",
+            "en-GB": "Ruhrcoder - Show a minimalistic product list"
+        },
+        "description": {
+            "de-DE": "Zeigt eine Produktliste an, die nur aus Bild, Titel und Preis besteht.",
+            "en-GB": "Shows a productlist which only contains picture, title and price."
+      },
+      "require": {
+        "php": ">= 8.0"
+      },
+      "remarks": {
+        "de-DE": "Minimalistische Produktliste anzeigen.",
+        "en-GB": "Show the minimalistic product list."
+      }
+    },
+    "autoload": {
+        "psr-4": {
+            "Ruhrcoder\\RcMinimalisticProductList\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ruhrcoder\\RcMinimalisticProductList\\Tests\\": "tests/"
+        }
+    }
+}
