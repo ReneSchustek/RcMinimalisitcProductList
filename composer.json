@@ -16,8 +16,8 @@
     "extra": {
         "shopware-plugin-class": "Ruhrcoder\\RcMinimalisticProductList\\RcMinimalisticProductList",
         "label": {
-            "de-DE": "Ruhrcoder - Eine minimalistische Produktliste anzeigen",
-            "en-GB": "Ruhrcoder - Show a minimalistic product list"
+            "de-DE": "Ruhrcoder - Minimalistische Produktliste",
+            "en-GB": "Ruhrcoder - Minimalistic Product List"
         },
         "description": {
             "de-DE": "Zeigt eine Produktliste an, die nur aus Bild, Titel und Preis besteht.",
