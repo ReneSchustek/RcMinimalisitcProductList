@@ -59,7 +59,9 @@
 
                 <span class="product-price{% if isListPrice and not displayFrom and not displayFromVariants %} with-list-price{% endif %}">
                     {# @deprecated tag:v6.7.0 - Showing asterisk next to every price is deprecated. Tax and shipping info is displayed as text instead if `allowBuyInListing` is true. #}
-                    {% if page.header.navigation.active.customFields['rc_show_net_price'] == true 
+                    {% if page.header.navigation.active is not null
+                            and page.header.navigation.active.customFields['rc_show_net_price'] is defined
+                            and page.header.navigation.active.customFields['rc_show_net_price'] == true
                             and context.currentCustomerGroup.displayGross == true %}   
                         {% for taxElement in price.taxRules.elements %}
                             {% set priceGross = price.unitPrice %}
