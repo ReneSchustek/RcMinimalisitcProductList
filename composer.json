@@ -11,6 +11,7 @@
       }
     ],
     "require": {
+        "php": ">=8.2",
         "shopware/core": "~6.7.0 || ~6.8.0"
     },
     "extra": {
@@ -22,9 +23,6 @@
         "description": {
             "de-DE": "Zeigt eine Produktliste an, die nur aus Bild, Titel und Preis besteht.",
             "en-GB": "Shows a productlist which only contains picture, title and price."
-      },
-      "require": {
-        "php": ">= 8.0"
       },
       "remarks": {
         "de-DE": "Minimalistische Produktliste anzeigen.",

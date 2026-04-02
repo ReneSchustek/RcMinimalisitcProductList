@@ -1,51 +1,15 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box.html.twig' %}
+
 {% block component_product_box_include %}
-    {# Includes a custom product-box template defined by the layout variable.
-       The standard template is used if no custom layout is set. #}
-
-    {% if layout is empty %}
-        {% set layout = 'standard' %}
-    {% endif %}
-
-    {# Primär: vom ListingLayoutSubscriber gesetzte Extension am searchResult (AJAX-sicher) #}
-    {% if searchResult.extensions.rcMinimalisticLayout is defined
-            and searchResult.extensions.rcMinimalisticLayout.active %}
+    {# Minimalistic-Layout: Extension vom ListingLayoutSubscriber (AJAX-sicher) #}
+    {% if searchResult is defined
+        and searchResult.extensions.rcMinimalisticLayout is defined
+        and searchResult.extensions.rcMinimalisticLayout.active %}
         {% set layout = 'minimalistic' %}
-    {# Fallback: direkter Navigationszugriff für nicht-Listing-Kontexte #}
+    {# Fallback: direkter Navigationszugriff fuer nicht-Listing-Kontexte #}
     {% elseif page.header.navigation.active.customFields.rc_show_minimalistic_productlist ?? false %}
         {% set layout = 'minimalistic' %}
     {% endif %}
 
-
-    {% set sizes = {
-        xs: '500px',
-        sm: '315px',
-        md: '390px',
-        lg: '350px',
-        xl: '280px'
-    } %}
-
-    {% if layout == 'image' %}
-        {% set sizes = {
-            xs: '500px',
-            sm: '500px',
-            md: '390px',
-            lg: '350px',
-            xl: '280px'
-        } %}
-    {% endif %}
-
-    {% if layout == 'standard' %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
-    {% elseif layout == 'image' %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-image.html.twig' %}
-    {% elseif layout == 'minimal' %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-minimal.html.twig' %}
-    {% elseif layout == 'minimalistic' %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-minimalistic.html.twig' %}
-    {% elseif layout == 'wishlist' %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-wishlist.html.twig' %}
-    {% else %}
-        {% set template = '@Storefront/storefront/component/product/card/box-' ~ layout ~ '.html.twig' %}
-        {% sw_include template ignore missing %}
-    {% endif %}
+    {{ parent() }}
 {% endblock %}

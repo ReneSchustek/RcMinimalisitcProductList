@@ -27,13 +27,6 @@ final class RcMinimalisticProductList extends Plugin
 
     private function getCustomFieldsInstaller(): CustomFieldsInstaller
     {
-        if ($this->container->has(CustomFieldsInstaller::class)) {
-            return $this->container->get(CustomFieldsInstaller::class);
-        }
-
-        return new CustomFieldsInstaller(
-            $this->container->get('custom_field_set.repository'),
-            $this->container->get('custom_field_set_relation.repository')
-        );
+        return $this->container->get(CustomFieldsInstaller::class);
     }
 }

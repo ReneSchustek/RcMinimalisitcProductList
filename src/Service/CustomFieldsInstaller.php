@@ -76,7 +76,7 @@ final class CustomFieldsInstaller
     }
 
     /**
-     * @return string[]
+     * @return list<string>
      */
     private function getCustomFieldSetIds(Context $context): array
     {

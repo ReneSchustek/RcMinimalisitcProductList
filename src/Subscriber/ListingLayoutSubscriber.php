@@ -31,7 +31,7 @@ final class ListingLayoutSubscriber implements EventSubscriberInterface
     public function onListingResult(ProductListingResultEvent $event): void
     {
         $navigationId = $event->getRequest()->attributes->get('navigationId');
-        if (!$navigationId) {
+        if (!\is_string($navigationId) || $navigationId === '') {
             return;
         }
 
